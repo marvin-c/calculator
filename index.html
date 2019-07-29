@@ -306,6 +306,10 @@
           buttonNote();
           return;
         } else if (button == 'M+') {      // M+
+          if (result == 0) { 
+            display(result);
+            return;
+          }
           memoryLit('memLit', 'memory');
           math = '';
           memTriggered = true;
@@ -505,6 +509,7 @@
         }
       } else if (lastOperatorUsed == '=' && button == '√') {
         math = button;
+        oldNum = newNum;
       } else if (button == '=' && lastOperatorUsed == '%') {
         newNum = tempResult;
       } else if (button == '%') {
