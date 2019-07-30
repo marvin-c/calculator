@@ -383,6 +383,7 @@
           newNum = 0;
         }
       }  
+      if (errorStatus)  return; 
       checkResult(result);
       display(result);
       if (initial) result = '';
@@ -499,6 +500,10 @@
           math = lastOperatorUsed;
           lastOperatorUsed = button;
           oldNum = newNum;
+        } else if (math == '÷' && button == '=' && newNum == 0) {
+          document.getElementById("errorLit").innerHTML = 'error';
+          errorStatus = true;
+          return;
         } else {
           math = lastOperatorUsed;
           lastOperatorUsed = button;
