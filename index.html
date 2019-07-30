@@ -279,6 +279,7 @@
       if (typeof button != 'string') {                                                          //number
         if (lastOperatorUsed == '=' && typeof button != 'string') {
           result = '';
+          lastOperatorUsed = '';
         }
         if (memTriggered) {
           result = '';
@@ -292,6 +293,10 @@
           math = '';
         } else if (lastOperatorUsed == 'MRC') {
           result = '' + button;
+          lastOperatorUsed = '';
+        } else if (lastOperatorUsed == '√') {
+          result = '' + button;
+          oldNum = 0;
           lastOperatorUsed = '';
         } else {
           if (result == '0') {
@@ -367,9 +372,13 @@
             result = '' + button;
           }  
         } else if (button == '=') {       // Equals =
-          checkLastOperator(button);
-          mathOperatorOff();
-          compute(button);
+          if (math != '') {
+            checkLastOperator(button);
+            mathOperatorOff();
+            compute(button);
+          } else {
+            if (newNum != 0) oldNum = newNum;
+          }
           newNumOld = newNum;
           newNum = 0;
         }
@@ -459,7 +468,7 @@
         newNum = newNum / 100;
         tempResult = newNum;
         newNum = 0;
-      } else if (sign == '=' && lastOperatorUsed == '%') {
+      } else if (sign == '=' || sign == '+'  || sign == '-' || sign == 'x' || sign == '÷' && lastOperatorUsed == '%') {
         tempResult = oldNum * newNum;
         newNum = 0; 
       } else {
@@ -508,9 +517,16 @@
           oldNum = memory;
         }
       } else if (lastOperatorUsed == '=' && button == '√') {
+        if (math != '+' && math != '-' && math != 'x' && math != '÷') oldNum = newNum;
+          
+        
+        //   oldNum = newNum;
+        // }
+        
+        // oldNum = newNum;
         math = button;
-        oldNum = newNum;
-      } else if (button == '=' && lastOperatorUsed == '%') {
+      // } else if (button == '=' && lastOperatorUsed == '%') {
+      } else if (button == '=' || button == '+' || button == '-' || button == 'x' || button == '÷' && lastOperatorUsed == '%') {
         newNum = tempResult;
       } else if (button == '%') {
         mathOperatorLit('multiLit', '');
