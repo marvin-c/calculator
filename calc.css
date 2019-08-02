@@ -1,0 +1,242 @@
+.flex_keypad{
+  display: flex;
+  flex-direction: row;
+  background-color: #F6F5FA;
+  width: 480px;
+  padding: 15px 15px 15px 15px;
+  border-radius: 5px;
+}
+.lcd_screen_outer_gray{
+  border-radius: 5px;
+  background-color: #BBB9BA;
+  width: 510px;
+  height: 250px;
+  margin: 0;
+}
+.lcd_screen_black{
+  position: relative;
+  border-radius: 5px;
+  color: white;
+  background-color: #141414;
+  width: 480px;
+  height: 235px;
+  margin: 15px;
+  border-radius: 10% 10% 30% 30%;
+}
+.lcd_screen_gray{
+  position: absolute;
+  border-radius: 5% 5% 20% 20%;
+  background-color: #C9C9CB;
+  width: 420px;
+  height: 110px;
+  margin-left: 30px;
+  top: 70px;
+}
+.element {
+      border-bottom: 1px solid black;
+      border-top: 1px solid black;
+}
+.lcd_screen{
+  position: absolute;
+  border-radius: 5px;
+  background-color: #8A8C7F;
+  width: 300px;
+  height: 70px;
+  top: 20px;
+  left: 60px;
+  box-shadow: inset 0 -8px 10px -6px black;
+  display: inline-block;
+}
+.button {
+  border-radius: 8px;
+  color: white;
+  background-color: #37363C;
+  width: 80px;
+  height: 55px;
+  margin: 7px 7px;
+  font-size: 40px;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  line-height: 55px;
+  cursor: pointer;
+  box-shadow: 0 5px #999;
+}
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.34),0 17px 50px 0 rgba(0,0,0,0.29);
+}
+.button:active {
+  background-color: black;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.power {
+  background-color: #E7A3B7;
+}
+.dot{
+  line-height: 35px;
+}
+.plus{
+  height: 125px;
+  line-height: 125px;
+}
+.font {
+  font-size: 24px;
+}
+a:hover{
+  color:red;
+}
+.ecalcLabel1{
+  position: absolute;
+  width: 160px;
+  height: 30px;
+  color: #C9C9CB;
+  font-size: 20px;
+  font-style: italic;
+  left: 173px;
+  top: 35px;
+}
+.ecalcLabel2 {
+  position: absolute;
+  width: 160px;
+  height: 20px;
+  color: #C9C9CB;
+  font-size: 12px;
+  top: 200px;
+  left: 160px;
+}
+#anim {
+  animation-name: colorful;
+  animation-duration: 3s;
+}
+@keyframes colorful {
+  0% {
+    background-color: blue;
+  }
+  100% {
+    background-color: yellow;
+  }
+}
+@font-face {
+  font-family: 'Calculator';
+  src: url('./Calculator.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Yu Gothic';     
+  src: url('./yugothib.woff2') format('woff2'),
+        url('./yugothib.woff') format('woff'),
+        url('./yugothib.ttf') format('truetype'); 
+}
+.digitalNumeric {
+  font-family: Calculator;
+  font-weight: BOLD;
+  font-size: 60px;
+  font-style: normal;
+  color: black;
+  margin-bottom: 5px;
+  text-align: right;
+  line-height: 80px;
+}
+.digitalNumericBox {
+  position: relative;
+  margin-left: 6px;
+  width: 280px;
+  height: 63px;
+  text-align: right;
+}
+.mem {
+  position: absolute;
+  width: 30px;
+  height: 15px;
+  bottom: 61px;
+  right: 80px;
+  font-family: calculator;
+  font-size: 21px;
+  font-weight: bold;
+  color: black;
+}
+.error {
+  position: absolute;
+  width: 50px;
+  height: 15px;
+  color: black;
+  bottom: 60px;
+  left: 9px;
+  font-family: calculator;
+  font-size: 21px;
+  font-weight: bold;
+}
+.note {
+  position: absolute;
+  width: 10px;
+  height: 15px;
+  
+  bottom: 56px;
+  right: 20px;
+  font-family: calculator;
+  font-size: 21px;
+  font-weight: bold;
+  color: black;
+}
+.numPlus {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  top: 0px;
+  right: 170px;
+  font-family: calculator;
+  font-size: 21px;
+  font-weight: bold;
+  color: black;
+}
+.numMinus {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  bottom: 63px;
+  right: 180px;
+  font-family: calculator;
+  font-size: 40px;
+  font-weight: bold;
+  color: black;
+}
+.numMulti {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  bottom: 54px;
+  right: 190px;
+  font-family: calculator;
+  font-size: 21px;
+  font-weight: bold;
+  color: black;
+}
+.numDiv {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  bottom: 50px;
+  right: 203px;
+  font-family: calculator;
+  font-size: 21px;
+  font-weight: bold;
+  color: black;
+}
+.numDot {
+  position: absolute;
+  width: 10px;
+  height: 19px;
+  bottom: 45px;
+  right: 5px;
+  font-family: calculator;
+  font-size: 60px;
+  font-weight: bold;
+  color: black;
+}
+.tunga {
+  display: block;
+  margin: auto;
+  vertical-align: middle;
+  width: 510px;
+  height: 680px;
+}
